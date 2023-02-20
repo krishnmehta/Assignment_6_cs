@@ -24,7 +24,7 @@ class Program
         }
     }
 
-    static async Task<string> DownloadContentAsync(string url)
+    static async Task<string> DownloadContentAsync(string url) //Downloading content using HTTP client
     {
         using (var client = new HttpClient())
         {
@@ -32,7 +32,7 @@ class Program
             return await res.Content.ReadAsStringAsync();
         }
     }
-    static async Task WriteContentAsync(string filename, string content)
+    static async Task WriteContentAsync(string filename, string content) //Writing the content
     {
         using (var writer = new StreamWriter(filename)) // Using StreamWriter to write in file
         {
